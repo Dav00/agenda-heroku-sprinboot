@@ -1,2 +1,3 @@
 # agenda-heroku-sprinboot
-Proyecto desarrollado para poner a prueba los conocimientos adquiridos en una formación.
+Project developed to put into practice what I learned in a Spring Boot training.
+Demo: https://agenda-springboot.herokuapp.com/
