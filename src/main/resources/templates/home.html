@@ -38,7 +38,7 @@ xmlns:sec="http://www.thymeleaf.org/exxtras/spring-security">
 <div class="alert alert-primary" role="alert">
 Bienvenido a tu agenda personal!
 </div>
-	<div class="container" sec:authorize="!isAuthenticated()">
+	<div class="container mb-5" style="overflow-y: auto;" sec:authorize="!isAuthenticated()">
 		<div th:each="contacto : ${contactos}" class="row">
 			<div class="card" style="width: 18rem;">
 				<div class="card-body">
