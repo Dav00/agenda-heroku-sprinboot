@@ -1,5 +1,7 @@
-package com.agenda;
+package com.agenda.controllers;
 
+import com.agenda.models.Contacto;
+import com.agenda.services.ContactoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,7 +33,24 @@ public class MainController {
 		mav.addObject("contactos", repo.findAll());
 		return mav;
 	}
-
+	@GetMapping("/contactos/familia")
+	public ModelAndView paginaInicialFamilia() {
+		ModelAndView mav = new ModelAndView("home");
+		mav.addObject("contactos", repo.findAllFamilia());
+		return mav;
+	}
+	@GetMapping("/contactos/trabajo")
+	public ModelAndView paginaInicialTrabajo() {
+		ModelAndView mav = new ModelAndView("home");
+		mav.addObject("contactos", repo.findAllTrabajo());
+		return mav;
+	}
+	@GetMapping("/contactos/amigos")
+	public ModelAndView paginaInicialAmigos() {
+		ModelAndView mav = new ModelAndView("home");
+		mav.addObject("contactos", repo.findAllAmigos());
+		return mav;
+	}
 	@GetMapping("/delete/{id}")
 	public String borrarUno(@PathVariable("id") Long id) {
 		Contacto c = repo.findById(id);
