@@ -22,6 +22,14 @@
 					type="text" class="form-control" id="telefono"
 					th:field="*{telefono}">
 			</div>
+			<div class="form-group">
+				<label for="telefono" class="form-label">Categoria</label>
+				<select id="categoria" class="form-control" th:field="*{categoria}" >
+					<option value="Familia">Familia</option>
+					<option value="Amigos">Amigos</option>
+					<option value="Trabajo">Trabajo</option>
+				</select>
+			</div>
 			<div class="d-flex justify-content-center mt-3">
 				<button type="submit" class="btn btn-primary w-100">Crear</button>
 			</div>

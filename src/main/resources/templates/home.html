@@ -18,10 +18,20 @@ xmlns:sec="http://www.thymeleaf.org/exxtras/spring-security">
 
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">Agenda Telefonica</a>
+		<a class="navbar-brand" href="/">Agenda Telefonica</a>
 		<div class="collapse navbar-collapse justify-content-end">
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+					Filtros
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+					<li><a class="dropdown-item" href="/contactos/familia">Familia</a></li>
+					<li><a class="dropdown-item" href="/contactos/amigos">Amigos</a></li>
+					<li><a class="dropdown-item" href="/contactos/trabajo">Trabajo</a></li>
+				</ul>
+			</div>
 			<span><a class="nav-link text-white font-weight-bold"
-				href="./contactos/create">Añadir contacto</a></span>
+					 href="./contactos/create">Añadir contacto</a></span>
 		</div>
 	</nav>
 
@@ -32,7 +42,11 @@ Bienvenido a tu agenda personal!
 		<div th:each="contacto : ${contactos}" class="row">
 			<div class="card" style="width: 18rem;">
 				<div class="card-body">
-					
+					<td>
+						<h1 th:if="${contacto.categoria == 'Amigos'}" class="badge bg-primary text-wrap float-right" th:text="${contacto.categoria}"></h1>
+						<h1 th:if="${contacto.categoria == 'Familia'}" class="badge bg-success text-wrap float-right" th:text="${contacto.categoria}"></h1>
+						<h1 th:if="${contacto.categoria == 'Trabajo'}" class="badge bg-secondary text-wrap float-right" th:text="${contacto.categoria}"></h1>
+					</td>
 					<h4 class="card-title" th:text="${contacto.nombre}"></h4>
 					<h5 class="card-subtitle" th:text="${contacto.apellidos}"></h5>
 					<p class="card-text" th:text="${contacto.telefono}"></p>
