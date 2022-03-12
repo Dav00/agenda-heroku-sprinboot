@@ -1,5 +1,7 @@
-package com.agenda;
+package com.agenda.controllers;
 
+import com.agenda.models.Contacto;
+import com.agenda.services.ContactoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

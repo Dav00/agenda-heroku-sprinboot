@@ -1,5 +1,7 @@
-package com.agenda;
+package com.agenda.services;
 
+import com.agenda.models.Contacto;
+import com.agenda.repositories.ContactoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
